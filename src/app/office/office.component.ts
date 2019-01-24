@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FloorInterface } from '../interfaces/floor-interface';
 import { OfficeService } from '../services/office.service';
+import { OFFICE } from '../mocks/mock-office';
 
 @Component({
   selector: 'app-office',
@@ -16,13 +17,11 @@ export class OfficeComponent implements OnInit {
 
   getOffice() {
     this.office = this.officeService.getOffice();
-    console.log(this.office);
-    
+    console.log(OFFICE);
   }
 
-
-
   ngOnInit() {
+    this.getOffice();
   }
 
 }
