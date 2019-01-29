@@ -1,3 +1,40 @@
-<p>
-  floors works!
-</p>
+<div class="container">
+  <div class="row">
+     <h1 class="text-center">{{ floor }} Trash Bins</h1>
+  </div>
+  <div class="row">
+     <div class="col-md-4" *ngFor="let bin of bins">
+        <div class="trashBox">
+           <h1 class="text-center">{{ bin.location }}</h1>
+           <h2 class="text-center">{{bin.percentFull}}</h2>
+           <h2 class ="text-center">{{bin.hasFood}}</h2>
+           <button class="btn btn-primary center-button" type="button" data-toggle="modal" data-target="#myModal" (click)="getBin(bin)">View</button>
+          </div>
+     </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Trash Bin {{ bin.id }} </h4>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+         <form>
+            <div class="form-group">
+               <label for="percentFull">Percent Full:</label>
+               <input type="text" class="form-control" id="percentFull" name="percentFull" [(ngModel)]="bin.percentFull">
+               <input type="checkbox" [(ngModel)]="bin.hasFood" id="hasFood" name="hasFood">Has Food
+            </div>
+            <button class="btn btn-success" data-dismiss="modal">Save</button>
+         </form>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
