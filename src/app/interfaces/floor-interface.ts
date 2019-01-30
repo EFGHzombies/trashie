@@ -1,6 +1,9 @@
+import { TrashInterface } from '../interfaces/trash-interface';
+
 export interface FloorInterface {
+    id: number;
     floorLevel: string;
     trashType: string[];
-    binCount: number;
+    bins: TrashInterface[];
     floorStatus: boolean;
 }

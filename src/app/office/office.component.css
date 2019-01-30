@@ -1,0 +1,21 @@
+.no-padding {
+ padding: 0px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.floorText {
+    font-size: 24px;
+    font-style: bold;
+}
+
+.trash {
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 35px;
+    height: 45px;
+}

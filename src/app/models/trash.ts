@@ -1,4 +1,4 @@
-export interface TrashInterface {
+export class Trash {
     id: string;
     capacity: number;
     trashables: string[];
