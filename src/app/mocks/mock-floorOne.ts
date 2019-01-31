@@ -1,10 +1,10 @@
 import { TrashInterface } from '../interfaces/trash-interface';
 
 export const F_ONE: TrashInterface[] = [
-    { id: 'a', capacity: 100, trashables: ['recycle', 'food'], location: 'Front desk', picture: '../getIt'},
-    { id: 'b', capacity: 100, trashables: ['recycle', 'food'], location: 'Front entrance', picture: '../getIt'},
-    { id: 'c', capacity: 20, trashables: ['recycle', 'food'], location: 'Cafe lounge', picture: '../getIt'},
-    { id: 'd', capacity: 70, trashables: ['recycle', 'food'], location: 'Cafe register', picture: '../getIt'},
-    { id: 'e', capacity: 80, trashables: ['recycle', 'food'], location: 'Female restroom', picture: '../getIt'},
-    { id: 'f', capacity: 90, trashables: ['recycle', 'food'], location: 'Men restroom', picture: '../getIt'}
+    { id: 'a', percentFull: 100, hasFood: true, location: 'Front desk'},
+    { id: 'b', percentFull: 100, hasFood: true, location: 'Front entrance'},
+    { id: 'c', percentFull: 20, hasFood: true, location: 'Cafe lounge'},
+    { id: 'd', percentFull: 70, hasFood: true, location: 'Cafe register'},
+    { id: 'e', percentFull: 80, hasFood: true, location: 'Female restroom'},
+    { id: 'f', percentFull: 90, hasFood: true, location: 'Men restroom'}
 ];
