@@ -6,7 +6,7 @@
         <div class="floorText">Floor {{ floor.floorLevel }}</div>
           <div class="container-fluid">
             <div class="panel panel-default trash pull-left" *ngFor="let trash of floor.bins">
-              <span>  {{ trash.capacity }}% </span>
+              <span>  {{ trash.percentFull }}% </span>
             </div>
           </div>
       </div>
