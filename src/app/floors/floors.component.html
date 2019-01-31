@@ -6,7 +6,7 @@
      <div class="col-md-4" *ngFor="let bin of bins">
         <div class="trashBox">
            <h1 class="text-center">{{ bin.location }}</h1>
-           <h2 class="text-center">{{bin.percentFull}}</h2>
+           <h2 class="text-center">{{bin.percentFull}}%</h2>
            <h2 class ="text-center">{{bin.hasFood}}</h2>
            <button class="btn btn-primary center-button" type="button" data-toggle="modal" data-target="#myModal" (click)="getBin(bin)">View</button>
           </div>
