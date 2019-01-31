@@ -1,7 +1,6 @@
 export interface TrashInterface {
-    id: string;
-    capacity: number;
-    trashables: string[];
-    location: string;
-    picture: string;
+        id: string;
+        percentFull: number;
+        location: string;
+        hasFood: boolean;
 }

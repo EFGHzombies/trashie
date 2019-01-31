@@ -1,7 +1,7 @@
 export class Trash {
     id: string;
-    percentFull: number; // percentFull
+    percentFull: number;
     location: string;
     hasFood: boolean;
-    // picture: string;
+    //picture: string;
 }

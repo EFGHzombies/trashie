@@ -1,0 +1,14 @@
+.trashBox {
+    width: 98%;
+    height: 250px;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 2px;
+    border: 1px solid #000000;
+ }
+
+ .center-button{
+    display: block;
+    width: 60px;
+    margin: 0 auto;
+ }

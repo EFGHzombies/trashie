@@ -12,6 +12,7 @@ const routes = [
   { path: 'office', component: OfficeComponent },
   { path: 'floors/:foor', component: FloorsComponent },
   { path: 'bin-share', component: BinShareComponent }
+
 ];
 
 @NgModule({
