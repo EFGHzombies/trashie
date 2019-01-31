@@ -10,8 +10,9 @@ const routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'office', component: OfficeComponent },
-  { path: 'floors/:floor', component: FloorsComponent },
-  { path: 'bin-share', component: BinShareComponent },
+  { path: 'floors/:foor', component: FloorsComponent },
+  { path: 'bin-share', component: BinShareComponent }
+
 ];
 
 @NgModule({
