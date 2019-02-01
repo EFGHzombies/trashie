@@ -22,9 +22,15 @@ export class OfficeComponent implements OnInit {
 
   emptyOffice() {
     for(let i = this.office.length-1; i>=0; i--) {
+      for(let j = this.office[i].bins.length-1; j>=0; j--) {
+        this.office[i].bins[j].percentFull = 0;
+      }
       this.office[i].floorStatus = false;
     }
-    
+  }
+
+  floorRoute(id: number) {
+    return this.officeService.changeRoute(id); 
   }
 
   ngOnInit() {
