@@ -14,17 +14,15 @@ import { Trash } from '../models/trash';
 export class FloorsComponent implements OnInit {
 
   bins: TrashInterface[];
-  floor: string;
+  floor: Number;
   bin: TrashInterface = new Trash();
 
   constructor(private floorService: FloorService, private route: ActivatedRoute) { }
 
   getBins() {
     return this.route.params.subscribe( params => {
-      console.log(params.floor);
-      this.floor = params.floor;
-      this.bins = this.floorService.getBins(params.floor);
-      console.log(this.bins);
+      this.floor = +params.floor;
+      this.bins = this.floorService.getBins(+params.floor);
     });
   }
 
