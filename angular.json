@@ -28,7 +28,8 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
-              "node_modules/bootstrap3/dist/js/bootstrap.js"
+              "node_modules/bootstrap3/dist/js/bootstrap.js",
+              "node_modules/hammerjs/hammer.min.js"
             ]
           },
           "configurations": {
@@ -86,7 +87,9 @@
               "node_modules/bootstrap3/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/hammerjs/hammer.min.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { OFFICE } from '../mocks/mock-office';
 import { FloorInterface } from '../interfaces/floor-interface';
@@ -8,9 +9,15 @@ import { FloorInterface } from '../interfaces/floor-interface';
 })
 export class OfficeService {
 
+  constructor(private router: Router) { }
+
   getOffice(): FloorInterface[] {
     return OFFICE;
   }
 
-  constructor() { }
+  changeRoute(id: number) {
+    // global floor tracker variable = id;
+    return this.router.navigateByUrl(`/floors/${OFFICE[id].floorLevel}`);
+  }
+
 }
