@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-     <h1 class="text-center">{{ floor }} Trash Bins</h1>
+     <h1 class="text-center">Trash Bins</h1>
   </div>
   <div class="row">
      <div class="col-md-4" *ngFor="let bin of bins">
@@ -27,6 +27,7 @@
         <ul class="list-group">
          <form>
             <div class="form-group">
+               <p>Location: {{bin.location}}</p>
                <label for="percentFull">Percent Full:</label>
                <input type="text" class="form-control" id="percentFull" name="percentFull" [(ngModel)]="bin.percentFull">
                <input type="checkbox" [(ngModel)]="bin.hasFood" id="hasFood" name="hasFood">Has Food
