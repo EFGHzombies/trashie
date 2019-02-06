@@ -9,6 +9,8 @@ import { FloorsComponent } from './floors/floors.component';
 import { HomeComponent } from './home/home.component';
 import { OfficeComponent } from './office/office.component';
 import { BinShareComponent } from './bin-share/bin-share.component';
+import { LoginComponent } from './login/login.component';
+import { SetupComponent } from './setup/setup.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { BinShareComponent } from './bin-share/bin-share.component';
     HomeComponent,
     OfficeComponent,
     BinShareComponent,
+    LoginComponent,
+    SetupComponent,
   ],
   imports: [
     BrowserModule,

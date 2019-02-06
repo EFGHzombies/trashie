@@ -11,13 +11,12 @@
     font-style: bold;
 }
 
-.trash {
-    text-align: center;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    width: 35px;
-    height: 45px;
+.trashMargin {
+    margin: 0px 5px 10px 0px;
+}
+
+.rowMargin {
+    margin: 0px 0px 10px 0px;
 }
 
 .warningColor {
