@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +31,10 @@ import { SetupComponent } from './setup/setup.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    MatIconModule
+    MatIconModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
