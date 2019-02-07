@@ -16,7 +16,6 @@ export class OfficeService {
   }
 
   changeRoute(id: number) {
-    // global floor tracker variable = id;
     return this.router.navigateByUrl(`/floors/${id}`);
   }
 

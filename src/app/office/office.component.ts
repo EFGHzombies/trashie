@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FloorInterface } from '../interfaces/floor-interface';
 import { OfficeService } from '../services/office.service';
+import { TrashInterface } from '../interfaces/trash-interface';
 
 @Component({
   selector: 'app-office',
@@ -26,6 +27,14 @@ export class OfficeComponent implements OnInit {
         this.office[i].bins[j].percentFull = 0;
       }
       this.office[i].floorStatus = false;
+    }
+  }
+
+  checkStatus(floor: TrashInterface[]) {
+    for(let i = floor.length-1; i>=0; i--) { 
+      if(floor[i].percentFull >= 50) {
+        return true;
+      }
     }
   }
 
