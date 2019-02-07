@@ -1,0 +1,39 @@
+/* .sec {
+    border: 1px solid black;
+} */
+
+.house {
+    height: 160px;
+    border: 1px solid black;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+.bin-brown {
+    background-color: brown;
+}  
+
+.bin-green {
+    background-color: green;
+}  
+
+.bin-blue {
+    background-color: blue;
+}  
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.flex-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
