@@ -7,15 +7,22 @@ import { FloorsComponent } from './floors/floors.component';
 import { BinShareComponent } from './bin-share/bin-share.component';
 import { LoginComponent } from './login/login.component';
 import { SetupComponent } from './setup/setup.component';
+import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
+import { AuthGuard } from './services/auth.guard';
+import { UserResolver } from './user/user.resolver';
+
 
 const routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'office', component: OfficeComponent },
   { path: 'floors/:floor', component: FloorsComponent },
   { path: 'bin-share', component: BinShareComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'setup', component: SetupComponent }
+  { path: 'setup', component: SetupComponent },
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
+  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+  { path: 'user', component: UserComponent,  resolve: { data: UserResolver}}
 ];
 
 @NgModule({

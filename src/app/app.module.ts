@@ -15,6 +15,14 @@ import { OfficeComponent } from './office/office.component';
 import { BinShareComponent } from './bin-share/bin-share.component';
 import { LoginComponent } from './login/login.component';
 import { SetupComponent } from './setup/setup.component';
+import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
+
+import { AuthGuard } from './services/auth.guard';
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserResolver } from './user/user.resolver';
 
 
 @NgModule({
@@ -26,9 +34,12 @@ import { SetupComponent } from './setup/setup.component';
     BinShareComponent,
     LoginComponent,
     SetupComponent,
+    RegisterComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
     MatIconModule,
@@ -36,7 +47,7 @@ import { SetupComponent } from './setup/setup.component';
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
