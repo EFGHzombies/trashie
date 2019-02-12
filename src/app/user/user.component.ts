@@ -29,8 +29,10 @@ export class UserComponent implements OnInit{
   ngOnInit(): void {
     this.route.data.subscribe(routeData => {
       let data = routeData['data'];
+      console.log(data);
       if (data) {
         this.user = data;
+        console.log(this.user);
         this.createForm(this.user.name);
       }
     })
