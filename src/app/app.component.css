@@ -4,6 +4,7 @@
 .nav-color {
     background-image: url("../assets/img/Lush.jpg");
     height: 100%;
+    background-size: cover;
 }
 
 .navbar {
@@ -12,7 +13,7 @@
     margin: 0;
 }
 
-.background {
+/* .background {
     background-image: url('../assets/img/sky.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -20,4 +21,4 @@
     height: 100vh;
     position: absolute;
     z-index: -2;
-}
+} */
