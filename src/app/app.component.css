@@ -1,2 +1,24 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.nav-color {
+    background-image: url("../assets/img/Lush.jpg");
+    height: 100%;
+    background-size: cover;
+}
+
+.navbar {
+    max-height: 12%;
+    padding: 0;
+    margin: 0;
+}
+
+/* .background {
+    background-image: url('../assets/img/sky.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    position: absolute;
+    z-index: -2;
+} */
