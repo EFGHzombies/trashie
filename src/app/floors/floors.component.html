@@ -1,18 +1,21 @@
-<div class="container">
-  <div class="row">
-     <h1 class="text-center">Trash Bins</h1>
-  </div>
-  <div class="row">
-     <div class="col-md-4" *ngFor="let bin of bins">
-        <div class="trashBox">
-           <h1 class="text-center">{{ bin.id }}</h1>
-           <h2 class="text-center">{{bin.percentFull}}%</h2>
-           <h2 class ="text-center">{{bin.hasFood}}</h2>
-           <button class="btn btn-primary center-button" type="button" data-toggle="modal" data-target="#myModal" (click)="getBin(bin)">View</button>
+<body>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-center">Trash Bins</h1>
+    </div>
+    <div class="row">
+      <div class="col-xs-4" *ngFor="let bin of bins">
+          <div class="trashBox">
+            <img class="box-background" src="{{bin.image}}">
+            <h1 class="text-center">{{ bin.id }}</h1>
+            <h2 class="text-center">Capacity = {{bin.percentFull}}%</h2>
+            <div class="text-center icon"><mat-icon *ngIf="bin.hasFood" >fastfood</mat-icon></div>
+            <button class="btn btn-primary center-button" type="button" data-toggle="modal" data-target="#myModal" (click)="getBin(bin)">View</button>
           </div>
-     </div>
+      </div>
+    </div>
   </div>
-</div>
+</body> 
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -25,15 +28,21 @@
       </div>
       <div class="modal-body">
         <ul class="list-group">
-         <form>
-            <div class="form-group">
-               <p>Location: {{bin.location}}</p>
-               <label for="percentFull">Percent Full:</label>
-               <input type="text" class="form-control" id="percentFull" name="percentFull" [(ngModel)]="bin.percentFull">
-               <input type="checkbox" [(ngModel)]="bin.hasFood" id="hasFood" name="hasFood">Has Food
+        <form>
+            <div class="form-group info">
+              <div>
+                <img class="bin-pic" src="{{bin.image}}">
+                <p><b>Location:</b> {{bin.location}}</p>
+              </div>  
+              <div class="bin-info">
+                <label for="percentFull">Percent Full:</label>
+                <input type="text" class="form-control" id="percentFull" name="percentFull" [(ngModel)]="bin.percentFull"><br>
+                <input type="checkbox" [(ngModel)]="bin.hasFood" id="hasFood" name="hasFood">Has Food <br>
+                <mat-icon *ngIf="bin.hasFood">fastfood</mat-icon>
+              </div>
             </div>
             <button class="btn btn-success" data-dismiss="modal">Save</button>
-         </form>
+        </form>
         </ul>
       </div>
     </div>

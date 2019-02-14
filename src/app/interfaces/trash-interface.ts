@@ -3,4 +3,5 @@ export interface TrashInterface {
         percentFull: number;
         location: string;
         hasFood: boolean;
+        image: string;
 }
