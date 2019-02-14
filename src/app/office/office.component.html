@@ -10,8 +10,20 @@
         <div class="floorText">Floor {{ floor.floorLevel }}</div>
           <div class="container-fluid">
             <div class="panel panel-default container-fluid trashMargin pull-left" *ngFor="let trash of floor.bins">
-              <span>  
-                <div>{{ trash.id }}</div><div class='panel panel-default no-margin no-padding'></div><div>{{ trash.percentFull }}% </div>
+              <span>
+                <div>{{ trash.id }}</div><div class='panel panel-default no-margin no-padding'></div><div class="circle-bar"><circle-progress
+                  [percent]="trash.percentFull"
+                  [radius]="30"
+                  [titleFontSize]="20"
+                  [imageHeight]="16"
+                  [subtitleFontSize]="0"
+                  [outerStrokeWidth]="5"
+                  [innerStrokeWidth]="0"
+                  [outerStrokeColor]="'#DC143C'"
+                  [innerStrokeColor]="'#C7E596'"
+                  [animation]="true"
+                  [animationDuration]="200">
+                </circle-progress></div>
               </span>
             </div>
           </div>

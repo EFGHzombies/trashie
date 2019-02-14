@@ -11,6 +11,7 @@ import { OfficeComponent } from './office/office.component';
 import { BinShareComponent } from './bin-share/bin-share.component';
 import { LoginComponent } from './login/login.component';
 import { SetupComponent } from './setup/setup.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 @NgModule({
@@ -27,7 +28,16 @@ import { SetupComponent } from './setup/setup.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    MatIconModule
+    MatIconModule,
+    NgCircleProgressModule.forRoot({
+     radius: 100,
+     outerStrokeWidth: 16,
+     innerStrokeWidth: 8,
+     outerStrokeColor: "#78C000",
+     innerStrokeColor: "#C7E596",
+     animationDuration: 300,
+   })
+
   ],
   providers: [],
   bootstrap: [AppComponent]
