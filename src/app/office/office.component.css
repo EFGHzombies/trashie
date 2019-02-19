@@ -6,6 +6,11 @@ body {
     z-index: -1;
  }
 
+b {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
 .floor-box {
     background-color: lightgray;
     border: 5px solid green;
@@ -38,8 +43,9 @@ body {
 }
 
 .trashMargin {
+    font-size: 18px;
     margin: 0px 5px 10px 0px;
-    border-radius: 7px;
+    border-radius: 8px;
     border: 2px solid green;
 }
 
@@ -50,3 +56,15 @@ body {
 .warningColor {
     color: red;
 }
+
+/* message bubble */
+.bubble{
+    background-color: rgb(123, 219, 248);
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px;
+    /* height: 200px; */
+    margin: 20px;
+    /* width:  275px; */
+}
+
+/* end message bubble */
