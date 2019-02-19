@@ -10,6 +10,6 @@ export const F_TWO: TrashInterface[] = [
     { id: '2g', percentFull: 0, hasFood: false, location: 'suite 223', image: '../assets/img/bins/2g.JPG'},
     { id: '2h', percentFull: 10, hasFood: false, location: 'suite 223', image: '../assets/img/bins/2h.JPG'},
     { id: '2i', percentFull: 80, hasFood: true, location: 'suite 223', image: '../assets/img/bins/2i.JPG'},
-    { id: "Women's restroom", percentFull: 90, hasFood: false, location: "Women's restroom", image: '../assets/img/bins/restroom.JPG'},
-    { id: "Men's restroom", percentFull: 70, hasFood: false, location: "Men's restroom", image: '../assets/img/bins/restroom.JPG'}
+    { id: "Women's", percentFull: 90, hasFood: false, location: "Women's restroom", image: '../assets/img/bins/restroom.JPG'},
+    { id: "Men's", percentFull: 70, hasFood: false, location: "Men's restroom", image: '../assets/img/bins/restroom.JPG'}
 ];

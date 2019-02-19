@@ -10,7 +10,7 @@ export const B_ONE: TrashInterface[] = [
     { id: 'B1g', percentFull: 20, hasFood: false, location: 'suite 004' , image: '../assets/img/bins/B1g.JPG'},
     { id: 'B1h', percentFull: 10, hasFood: true, location: 'break room' , image: '../assets/img/bins/B1h.JPG'},
     { id: 'B1i', percentFull: 70, hasFood: true, location: 'break room' , image: '../assets/img/bins/B1i.JPG'},
-    { id: "Women's restroom", percentFull: 80, hasFood: false, location: "Women's restroom" , image: '../assets/img/bins/restroom.JPG'},
-    { id: "Men's restroom", percentFull: 90, hasFood: false, location: "Men's restroom" , image: '../assets/img/bins/restroom.JPG'}
+    { id: "Women's", percentFull: 80, hasFood: false, location: "Women's restroom" , image: '../assets/img/bins/restroom.JPG'},
+    { id: "Men's", percentFull: 90, hasFood: false, location: "Men's restroom" , image: '../assets/img/bins/restroom.JPG'}
 
 ];

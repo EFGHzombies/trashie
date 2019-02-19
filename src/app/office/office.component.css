@@ -4,7 +4,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     z-index: -1;
-    height: 100vh;
  }
 
 .floor-box {
@@ -40,6 +39,8 @@ body {
 
 .trashMargin {
     margin: 0px 5px 10px 0px;
+    border-radius: 7px;
+    border: 2px solid green;
 }
 
 .rowMargin {
