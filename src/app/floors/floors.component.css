@@ -16,6 +16,7 @@ body {
    border: 5px solid #27a751;
    background-color: white;
    z-index: 1;
+   box-shadow: 6px 6px 6px;
  }
 
  .center-button{
