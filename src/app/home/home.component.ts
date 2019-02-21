@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  user_email: string;
 
-  ngOnInit() {
+  constructor(private authService: AuthService, private router: Router) { }
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
   }
 
+  getInfo() {
+    this.user_email = this.authService.userInfo();
+  }
+
+  ngOnInit() {
+    this.isLoggedIn();
+    this.getInfo();
+  }
 }

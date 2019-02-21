@@ -5,10 +5,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   public form: FormGroup;
 
@@ -22,13 +22,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login() {
+  register() {
     const inputValue = this.form.value;
-    this.authService.login(inputValue.email, inputValue.password)
+    this.authService.register(inputValue.email, inputValue.password)
       .subscribe(
         success => this.router.navigateByUrl(`/setup`),
         error => alert(error)
       )
-    
   }
 }

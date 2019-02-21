@@ -7,6 +7,7 @@ import { FloorsComponent } from './floors/floors.component';
 import { BinShareComponent } from './bin-share/bin-share.component';
 import { LoginComponent } from './login/login.component';
 import { SetupComponent } from './setup/setup.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes = [
   { path: 'floors/:floor', component: FloorsComponent },
   { path: 'bin-share', component: BinShareComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'setup', component: SetupComponent }
+  { path: 'setup', component: SetupComponent },
+  { path: 'register', component: RegisterComponent }
 ];
 
 @NgModule({
