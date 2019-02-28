@@ -18,6 +18,7 @@ import { RegisterComponent } from './register/register.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { AuthService } from './services/auth.service';
+import { Building } from './models/building';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { AuthService } from './services/auth.service';
      animationDuration: 500,
     })
   ],
-  providers: [AuthService],
+  providers: [AuthService, Building],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

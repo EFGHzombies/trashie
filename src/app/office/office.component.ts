@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FloorInterface } from '../interfaces/floor-interface';
 import { OfficeService } from '../services/office.service';
+import { AuthService } from '../services/auth.service';
 import { TrashInterface } from '../interfaces/trash-interface';
 
 @Component({
@@ -14,7 +15,7 @@ export class OfficeComponent implements OnInit {
   office: FloorInterface[];
   officeName: string = "Bitwise Office" // Mock for now, user input later
 
-  constructor(private officeService: OfficeService) { }
+  constructor(private officeService: OfficeService, private authService: AuthService) { }
 
   getOffice() {
     this.office = this.officeService.getOffice();
@@ -43,7 +44,12 @@ export class OfficeComponent implements OnInit {
     return this.officeService.changeRoute(id); 
   }
 
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
+  }
+
   ngOnInit() {
+    this.isLoggedIn();
     this.getOffice();
   }
 

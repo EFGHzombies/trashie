@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+
+import { Building } from '../models/building';
+
 import * as firebase from 'firebase/app';
 
 @Component({
@@ -10,16 +13,20 @@ import * as firebase from 'firebase/app';
 })
 export class SetupComponent implements OnInit {
 
-  Office: string;
-  Floors: number;
-  Base: number;
+  private Floors: string;
+  private Base: string;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private building: Building, private authService: AuthService, private router: Router) { }
 
   disp() {
-    console.log(this.Office);
     console.log(this.Floors);
     console.log(this.Base);
+    let length = parseInt(this.Floors) + parseInt(this.Base);
+    console.log(length);
+    
+    this.building.floor = Array(length);
+
+    console.log(this.building);
   }
 
   isLoggedIn() {

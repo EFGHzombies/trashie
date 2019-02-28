@@ -17,13 +17,13 @@ export class AuthService {
     this.user = afAuth.authState;
    }
 
-  register(email, password): Observable<any> {
+  register(email: string, password: string): Observable<any> {
     return from(
       this.afAuth.auth.createUserWithEmailAndPassword(email, password)
     )
   }
 
-  login(email, password): Observable<any> {
+  login(email: string, password: string): Observable<any> {
     this.user_email = email;
     return from(
       this.afAuth.auth.signInWithEmailAndPassword(email, password)
