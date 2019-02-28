@@ -1,6 +1,14 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
+.shift{
+    margin-top: 7px;
+}
+
+.bot-mar{
+    margin-bottom: 3px;
+}
+
 .nav-color {
     background-image: url("../assets/img/Lush.jpg");
     height: 100%;
@@ -22,3 +30,4 @@
     position: absolute;
     z-index: -2;
 } */
+

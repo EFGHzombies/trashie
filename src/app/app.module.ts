@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,8 +14,10 @@ import { OfficeComponent } from './office/office.component';
 import { BinShareComponent } from './bin-share/bin-share.component';
 import { LoginComponent } from './login/login.component';
 import { SetupComponent } from './setup/setup.component';
+import { RegisterComponent } from './register/register.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -23,12 +28,17 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     BinShareComponent,
     LoginComponent,
     SetupComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
     MatIconModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
+
     NgCircleProgressModule.forRoot({
      radius: 100,
      outerStrokeWidth: 16,
@@ -37,10 +47,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
      outerStrokeColor: "#78C000",
      innerStrokeColor: "#C7E596",
      animationDuration: 500,
-   })
-
+    })
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

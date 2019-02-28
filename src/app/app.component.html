@@ -1,5 +1,4 @@
-
-<nav class="navbar navbar-default nav-color navbar-static-top">
+<nav class="navbar navbar-default nav-color navbar-static-top bot-mar">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -15,6 +14,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a routerLink="/office"><font color="black"><h4>Office</h4></font></a></li>
         <li><a routerLink="/bin-share"><font color="black"><h4>Bin-Share</h4></font></a></li>
+        <li><button class="btn btn-default shift" *ngIf="isLoggedIn" (click)="logout()">Logout</button></li>
       </ul>
     </div>
   </div>
