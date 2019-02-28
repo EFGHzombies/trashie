@@ -1,3 +1,36 @@
+body {
+    background-image: url('../../assets/img/office-bldg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -1;
+ }
+
+b {
+    background-color: lightgray;
+    border-radius: 10px;
+    box-shadow: 7px 7px 7px black;
+}
+
+.floor-box {
+    background-color: lightgray;
+    border: 5px solid green;
+    border-radius: 10px;
+    box-shadow: 8px 8px 8px;
+}
+
+.rr-box {
+    background-color: dodgerblue;
+    box-shadow: 8px 8px 8px;
+}
+
+.text-blue {
+    margin: 0;
+    padding-top: 45px;
+    padding-bottom: 30px;
+    color: darkblue;
+}
+
 .no-padding {
  padding: 0px;
 }
@@ -12,13 +45,28 @@
 }
 
 .trashMargin {
+    font-size: 18px;
     margin: 0px 5px 10px 0px;
+    border-radius: 8px;
+    border: 2px solid green;
 }
 
 .rowMargin {
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 80px 0px;
 }
 
 .warningColor {
     color: red;
 }
+
+/* message bubble */
+.bubble{
+    background-color: rgb(123, 219, 248);
+    border-radius: 5px;
+    box-shadow: 7px 7px 7px;
+    /* height: 200px; */
+    margin: 20px;
+    /* width:  275px; */
+}
+
+/* end message bubble */

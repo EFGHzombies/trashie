@@ -15,6 +15,7 @@ import { BinShareComponent } from './bin-share/bin-share.component';
 import { LoginComponent } from './login/login.component';
 import { SetupComponent } from './setup/setup.component';
 import { RegisterComponent } from './register/register.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { AuthService } from './services/auth.service';
 
@@ -37,6 +38,16 @@ import { AuthService } from './services/auth.service';
     MatIconModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
+
+    NgCircleProgressModule.forRoot({
+     radius: 100,
+     outerStrokeWidth: 16,
+     innerStrokeWidth: 8,
+     outerStrokeLinecap: "butt",
+     outerStrokeColor: "#78C000",
+     innerStrokeColor: "#C7E596",
+     animationDuration: 500,
+    })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

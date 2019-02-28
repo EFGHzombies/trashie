@@ -25,6 +25,7 @@ export class OfficeComponent implements OnInit {
     for(let i = this.office.length-1; i>=0; i--) {
       for(let j = this.office[i].bins.length-1; j>=0; j--) {
         this.office[i].bins[j].percentFull = 0;
+        this.office[i].bins[j].hasFood = false;
       }
       this.office[i].floorStatus = false;
     }

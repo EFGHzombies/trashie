@@ -1,24 +1,48 @@
-<h1 class="text-center">{{ officeName }}</h1>
-<div class="container-fluid no-padding">
-  <div class="row text-center rowMargin" *ngFor="let floor of office">
-      <div class="col-sm-2 container-fluid panel panel-default no-margin">
-        <mat-icon *ngIf="floor.food">fastfood</mat-icon>
-        <mat-icon *ngIf="floor.food">add</mat-icon>
-        <mat-icon *ngIf="floor.restRoom">wc</mat-icon>
-      </div>
-      <div class="col-sm-8 container-fluid panel panel-primary no-margin" (click)="floorRoute(floor.id)">
-        <div class="floorText">Floor {{ floor.floorLevel }}</div>
-          <div class="container-fluid">
-            <div class="panel panel-default container-fluid trashMargin pull-left" *ngFor="let trash of floor.bins">
-              <span>  
-                <div>{{ trash.id }}</div><div class='panel panel-default no-margin no-padding'></div><div>{{ trash.percentFull }}% </div>
-              </span>
+<body>
+  <h1 class="text-center text-blue"><b>{{ officeName }}</b></h1>
+  <h3 class="text-center text-blue"><b>(select a floor)</b></h3>
+  <div class="container-fluid">
+    <div class="row text-center rowMargin" *ngFor="let floor of office">
+        <div class="col-sm-2 container-fluid panel panel-default no-margin rr-box">
+          <mat-icon *ngIf="floor.food">fastfood</mat-icon>
+          <mat-icon *ngIf="floor.food">add</mat-icon>
+          <mat-icon *ngIf="floor.restRoom">wc</mat-icon>
+        </div>
+        <button class="col-sm-8 container-fluid panel panel-primary no-margin floor-box" (click)="floorRoute(floor.id)">
+          <div class="floorText">Floor {{ floor.floorLevel }}</div>
+            <div class="container-fluid">
+              <div class="panel panel-default container-fluid trashMargin pull-left" *ngFor="let trash of floor.bins">
+                <span>  
+                  <div><strong>{{ trash.id }}</strong></div><div class='panel panel-default no-margin no-padding'></div>
+                  <div class="circle-bar">
+                    <circle-progress
+                      [percent]="trash.percentFull"
+                      [radius]="30"
+                      [titleFontSize]="20"
+                      [imageHeight]="16"
+                      [subtitleFontSize]="0"
+                      [outerStrokeWidth]="8"
+                      [innerStrokeWidth]="0"
+                      [outerStrokeColor]="'#DC143C'"
+                      [innerStrokeColor]="'#C7E596'"
+                      [animation]="true"
+                      [animationDuration]="300">
+                    </circle-progress>
+                  </div>
+                </span>
+              </div>
             </div>
-          </div>
-      </div>
-      <div class="col-sm-2 text-left no-margin" *ngIf="checkStatus(floor.bins)">
-        <mat-icon class="warningColor">warning</mat-icon>
-      </div>
+        </button>
+        <div class="col-sm-2" >
+          <div *ngIf="checkStatus(floor.bins)">
+            <mat-icon class="warningColor" >warning</mat-icon>
+              <div class="bubble">
+                  <p><strong>This floor has trash bins above 50%!</strong></p>
+              </div>
+          </div>   
+        </div>
+    </div>
+    <button class="btn btn-danger pull-right" (click)="emptyOffice()">Empty all</button>
   </div>
-</div>
-<button class="btn btn-default pull-right" (click)="emptyOffice()">Empty all</button>
+  
+</body>

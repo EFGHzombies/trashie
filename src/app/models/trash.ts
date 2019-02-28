@@ -3,5 +3,5 @@ export class Trash {
     percentFull: number;
     location: string;
     hasFood: boolean;
-    //picture: string;
+    image: string;
 }

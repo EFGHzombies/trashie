@@ -8,3 +8,26 @@
 .bot-mar{
     margin-bottom: 3px;
 }
+
+.nav-color {
+    background-image: url("../assets/img/Lush.jpg");
+    height: 100%;
+    background-size: cover;
+}
+
+.navbar {
+    max-height: 12%;
+    padding: 0;
+    margin: 0;
+}
+
+/* .background {
+    background-image: url('../assets/img/sky.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    position: absolute;
+    z-index: -2;
+} */
+
