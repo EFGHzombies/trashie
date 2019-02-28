@@ -24,6 +24,7 @@ export class AppComponent {
   logout() {
     this.authService.logout();
     this.router.navigateByUrl('/login');
+    this.isLoggedIn = !this.isLoggedIn;
   }
 
 }

@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     const inputValue = this.form.value;
     this.authService.login(inputValue.email, inputValue.password)
       .subscribe(
-        success => this.router.navigateByUrl(`/setup`),
+        success => this.router.navigateByUrl(`/home`),
         error => alert(error)
       )
     

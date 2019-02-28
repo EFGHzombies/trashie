@@ -9,8 +9,8 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  user_email: string;
+  
+  private user_email: string;
 
   constructor(private authService: AuthService, private router: Router) { }
 

@@ -1,5 +1,7 @@
-<div class="page-header" *ngIf="isLoggedIn()">
-  <h2>Trashie User <small>{{ user_email }}</small></h2>
+<div class="page-header margins" *ngIf="isLoggedIn()">
+  <h2 class="margins">Trashie User <small>{{ user_email }}</small></h2>
+  <p>New? <a routerLink="/setup">Setup</a> your office today</p>
+  <p>Returning? <a routerLink="/office">Check</a> your trashies</p>
 </div>
 <div class="container-fluid">
   <div class="row">

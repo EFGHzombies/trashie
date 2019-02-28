@@ -24,6 +24,7 @@ export class AuthService {
   }
 
   login(email, password): Observable<any> {
+    this.user_email = email;
     return from(
       this.afAuth.auth.signInWithEmailAndPassword(email, password)
     )
@@ -34,7 +35,7 @@ export class AuthService {
   }
 
   userInfo() {
-    this.afAuth.authState.subscribe(auth => { 
+      this.user.subscribe(auth => { 
       this.user_email = auth.email;
     })
       return this.user_email;
