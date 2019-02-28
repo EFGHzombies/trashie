@@ -37,7 +37,7 @@ import { AuthService } from './services/auth.service';
     AppRoutingModule,
     MatIconModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
 
     NgCircleProgressModule.forRoot({
      radius: 100,
