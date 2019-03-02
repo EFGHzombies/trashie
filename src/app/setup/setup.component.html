@@ -4,18 +4,38 @@
 <div class="container-fluid" *ngIf="isLoggedIn()">
   <h1 class="text-center">Setup</h1>
   <form>
-    <div class="form-group">
-      <label for="title">Building Name</label>
-      <input type="text" class="form-control" id="title" name="title" [(ngModel)]="building.name">
+    <div class="container-fluid" *ngIf="!startup">
+      <div class="form-group">
+        <label for="title">Building Name</label>
+        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="building.name">
+      </div>
+      <div class="form-group">
+        <label for="floors"># of floors</label>
+        <input type="text" class="form-control" id="floors" name="floors" [(ngModel)]="Floors">
+      </div>
+      <div class="form-group">
+        <label for="base"># of basements</label>
+        <input type="text" class="form-control" id="base" name="base" [(ngModel)]="Base">
+      </div>
+      <input type="submit" value="Submit" (click)="start()">
     </div>
-    <div class="form-group">
-      <label for="floors"># of floors</label>
-      <input type="text" class="form-control" id="floors" name="floors" [(ngModel)]="Floors">
-    </div>
-    <div class="form-group">
-      <label for="base"># of basements</label>
-      <input type="text" class="form-control" id="base" name="base" [(ngModel)]="Base">
-    </div>
-    <input type="submit" value="Submit" (click)="disp()">
+  </form>
+    
+  <form>
+    <div class="container-fluid" *ngIf="floorDetail">
+       <div class="form-group">
+          <label for="title">Building Name</label>
+          <input type="text" class="form-control" id="title" name="title" [(ngModel)]="building.name">
+        </div>
+        <div class="form-group">
+          <label for="floors"># of floors</label>
+          <input type="text" class="form-control" id="floors" name="floors" [(ngModel)]="Floors">
+        </div>
+        <div class="form-group">
+          <label for="base"># of basements</label>
+          <input type="text" class="form-control" id="base" name="base" [(ngModel)]="Base">
+        </div>
+        <input type="submit" value="Submit" (click)="start()">
+    </div> 
   </form>
 </div>
