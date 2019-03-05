@@ -4,38 +4,36 @@
 <div class="container-fluid" *ngIf="isLoggedIn()">
   <h1 class="text-center">Setup</h1>
   <form>
-    <div class="container-fluid" *ngIf="!startup">
+    <div class="container-fluid">
+      <h3>Building name</h3>
       <div class="form-group">
-        <label for="title">Building Name</label>
         <input type="text" class="form-control" id="title" name="title" [(ngModel)]="building.name">
       </div>
-      <div class="form-group">
-        <label for="floors"># of floors</label>
-        <input type="text" class="form-control" id="floors" name="floors" [(ngModel)]="Floors">
-      </div>
-      <div class="form-group">
-        <label for="base"># of basements</label>
-        <input type="text" class="form-control" id="base" name="base" [(ngModel)]="Base">
-      </div>
-      <input type="submit" value="Submit" (click)="start()">
     </div>
   </form>
-    
+
   <form>
-    <div class="container-fluid" *ngIf="floorDetail">
-       <div class="form-group">
-          <label for="title">Building Name</label>
-          <input type="text" class="form-control" id="title" name="title" [(ngModel)]="building.name">
-        </div>
-        <div class="form-group">
-          <label for="floors"># of floors</label>
-          <input type="text" class="form-control" id="floors" name="floors" [(ngModel)]="Floors">
-        </div>
-        <div class="form-group">
-          <label for="base"># of basements</label>
-          <input type="text" class="form-control" id="base" name="base" [(ngModel)]="Base">
-        </div>
-        <input type="submit" value="Submit" (click)="start()">
-    </div> 
+    <div class="container-fluid">
+      <h3>Add a floor</h3>
+      <div class="form-group">
+        <label for="level">Floor level</label>
+        <input type="text" class="form-control" id="level" name="level" [(ngModel)]="floorIn.floorLevel">
+      </div>
+      <div class="form-group">
+        <label for="bins">How many trash bins are present on this floor?</label>
+        <input type="text" class="form-control" id="bins" name="bins" [(ngModel)]="binCount">
+      </div>
+      <div class="form-group">
+        <label for="food">Are there food sources on this floor?</label> <br>
+        <input type="radio" name="food" [(ngModel)]="floorIn.food" value="true"> Yes <br>
+        <input type="radio" name="food" [(ngModel)]="floorIn.food" value="false"> No <br>
+      </div>
+      <div class="form-group">
+        <label for="rest">Are there restrooms on this floor?</label> <br>
+        <input type="radio" name="rest" [(ngModel)]="floorIn.restRoom" value="true"> Yes <br>
+        <input type="radio" name="rest" [(ngModel)]="floorIn.restRoom" value="false"> No <br>
+      </div>
+        <input type="submit" value="Submit" (click)="addFloor()">
+    </div>
   </form>
 </div>

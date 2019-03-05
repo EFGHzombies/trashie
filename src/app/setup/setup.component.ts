@@ -3,6 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { SetupService } from '../services/setup.service';
 import { Building } from '../models/building';
+import { FloorInterface } from '../interfaces/floor-interface';
 
 import { DEFAULTarray } from '../mocks/default-office';
 import { DEFAULTfloor } from '../mocks/default-office';
@@ -20,34 +21,26 @@ export class SetupComponent implements OnInit {
 
   private building: Building = {
     name: 'office', 
-    floor: DEFAULTarray
+    floor: []
   };
-  private Floors: string;
-  private Base: string;
-  private startup: boolean = false;
-  private floorDetail: boolean = false;
-
+  private idCount: number = 0;
+  private floorIn: FloorInterface = DEFAULTfloor;
+  
+  private binCount: string;
+  
   constructor(private authService: AuthService, private setupService: SetupService, private router: Router) { }
 
-  start() {
-    console.log(this.Floors);
-    console.log(this.Base);
-    let i = 0;
-    console.log(i++);
-    
-    // let length = parseInt(this.Floors) + parseInt(this.Base);
-    // for(let i = 1; i<length; i++) {
-    //   this.building.floor.push(DEFAULTfloor);
-    // }
-    // for(let i = 0; i<length; i++) {
-    //   this.building.floor[i].id = i;
-    // }
-    
-    console.log(this.building);
-    this.startup = true;
+  addFloor() {
+    this.floorIn.id = this.idCount;
+    this.idCount = this.idCount + 1;
+    for(let i = parseInt(this.binCount) - 1; i > 0; i--) {
+      this.floorIn.bins.push(TRASHbin);
+    }
+    for(let i = 1; i < this.floorIn.bins.length; i++) {
+      this.floorIn.bins[i].id = String.fromCharCode(this.floorIn.bins[i].id.charCodeAt(0) + i);
+    }
+    console.log(this.floorIn);
   }
-
-
 
   isLoggedIn() {
     return this.authService.isLoggedIn();
